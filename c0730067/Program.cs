@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +32,18 @@ namespace c0730067
                 file.Close();
                 Console.WriteLine($"File has {counter}lines.");
             }
+        }
+public int FindNumbeOfBlankSpaces(string line)
+        {
+            //https://stackoverflow.com/questions/17812566/count-words-and-spaces-in-string-in-string-c-sharp
+            int countletters = 0;
+            int countSpaces = 0;
+            foreach (char c in line)
+            {
+                if (char.IsLetter(c)) { countletters++; }
+                if (char.IsWhiteSpace(c)) { countSpaces++; }
+            }
+            return countSpaces;
         }
 
     }
